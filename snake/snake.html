@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <script src="snake.js" defer></script>
+    <style>
+        /* Estilos generales */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            margin: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #00ff00; /* Verde neón para destacar */
+        }
+
+        canvas {
+            border: 2px solid #333;
+            background-color: #1a1a2e; /* Azul oscuro para el tablero */
+            margin-top: 20px;
+        }
+
+        .controls {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #0077ff; /* Azul brillante */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+        }
+
+        .score {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #00ff00;
+        }
+
+        /* Pantalla de Game Over */
+        #gameOverScreen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
+            border: 2px solid #00ff00;
+            padding: 20px;
+            text-align: center;
+            display: none; /* Oculto por defecto */
+            border-radius: 10px;
+        }
+
+        #gameOverScreen h2 {
+            margin: 0 0 15px;
+            color: #fff;
+        }
+
+        #gameOverScreen button {
+            background-color: #ff0000; /* Rojo brillante */
+        }
+
+        #gameOverScreen button:hover {
+            background-color: #cc0000; /* Rojo oscuro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Culebrita Mejorada</h1>
+    <div class="score">Puntuación: <span id="score">0</span></div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="controls">
+        <button id="pauseBtn">Pausar</button>
+        <button id="restartBtn">Reiniciar</button>
+    </div>
+
+    <!-- Pantalla de Game Over -->
+    <div id="gameOverScreen">
+        <h2>Game Over</h2>
+        <h4>creado por bryan678z</h4>
+        <p>Tu puntuación: <span id="finalScore">0</span></p>
+        <button id="restartGameOverBtn">Reiniciar</button>
+    </div>
+</body>
+</html>
